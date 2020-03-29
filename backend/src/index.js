@@ -5,10 +5,12 @@
 // se quiser parar, basta control + c
 
 const express = require('express');
+const cors = require('cors');
 const routes = require('./routes'); // ./ para referenciar a mesma pasta atual e nao um modulo externo
 
 const app = express();
 
+app.use(cors());
 app.use(express.json()); // isso diz que o body de todas as requisições será em json
 app.use(routes); // faz com que o routes.js seja chamado!
  

@@ -4,12 +4,14 @@
 
  module.exports = {
     async index (request, response)  {
+        console.log('OngController.Index');
         const ongs = await connection('ongs').select('*');
     
         return response.json(ongs);
     }, 
 
     async create(request, response) {
+        console.log('OngController.Create');
         const { name, email, whatsapp, city, uf } = request.body;
 
         const id = crypto.randomBytes(4).toString('HEX');
